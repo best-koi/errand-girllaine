@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 26e3d9fb30e285c43972249a19c47588
+guid: b5f0855c7617ede4eaf2c605db1c7082
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: X8 Laine_RightHook-Sheet_0
+      name: Laine-Block-Recovered-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b8e229c3d3a61a469f07d8bdf11b5f7
-      internalID: -1368490453
+      spriteID: 9ab550f8908ac2d41a684bde8ff30229
+      internalID: 435247121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: X8 Laine_RightHook-Sheet_1
+      name: Laine-Block-Recovered-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5716e3c990cd94b959be1289ce3375
+      internalID: -1600371497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202de102073d2b940a79ba9d9d8a9962
+      internalID: -1034482429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d57e0ccef2a976469a7e8193d8a0a07
+      internalID: 1404937620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28167452c3fe5e04eaaac219e2e4fea5
+      internalID: 1912220654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55824ee3ff9b994fa3bc3e8f52f5a5d
+      internalID: 870619112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07298c98c892cac4394a6bb6ab639f01
+      internalID: -952154327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066af6357b20b1c47ae028b7c8817186
+      internalID: 506479952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laine-Block-Recovered-Sheet_8
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84ce34c0699ac8a499d1166853ac8f09
-      internalID: -510891770
+      spriteID: 1b23dc73523b605428ece212f587f3f8
+      internalID: -1737089811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: X8 Laine_RightHook-Sheet_2
+      name: Laine-Block-Recovered-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 576
         y: 0
-        width: 512
-        height: 512
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,71 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bcae1166421604419fcaaa89f120711
-      internalID: 1166080801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: X8 Laine_RightHook-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 122b9ecd79884944d8e08670ab0e6041
-      internalID: -643055927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: X8 Laine_RightHook-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ef1d71531e4b7d4182d2d8a8804594b
-      internalID: 1324872499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: X8 Laine_RightHook-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da17b10de32139d4e99409109bc8bfe9
-      internalID: 1882303016
+      spriteID: 618a2572673ef2642806c30dd8a0ee1c
+      internalID: -1373930033
       vertices: []
       indices: 
       edges: []
@@ -265,12 +349,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      X8 Laine_RightHook-Sheet_0: -1368490453
-      X8 Laine_RightHook-Sheet_3: -643055927
-      X8 Laine_RightHook-Sheet_5: 1882303016
-      X8 Laine_RightHook-Sheet_1: -510891770
-      X8 Laine_RightHook-Sheet_2: 1166080801
-      X8 Laine_RightHook-Sheet_4: 1324872499
+      Laine-Block-Recovered-Sheet_5: 870619112
+      Laine-Block-Recovered-Sheet_6: -952154327
+      Laine-Block-Recovered-Sheet_0: 435247121
+      Laine-Block-Recovered-Sheet_2: -1034482429
+      Laine-Block-Recovered-Sheet_8: -1737089811
+      Laine-Block-Recovered-Sheet_9: -1373930033
+      Laine-Block-Recovered-Sheet_4: 1912220654
+      Laine-Block-Recovered-Sheet_7: 506479952
+      Laine-Block-Recovered-Sheet_3: 1404937620
+      Laine-Block-Recovered-Sheet_1: -1600371497
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

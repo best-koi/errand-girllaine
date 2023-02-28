@@ -3,50 +3,74 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Defines the properties and actions related to the health stat.
 /// </summary>
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField]
-    private float maxHp;
-    private float currentHealth;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private float attackDuration = 0.5f;
+    private BoxCollider2D hitbox;
+
+    //temporary
+    public UnityEvent<float> healthChange; //for health bar
 
     private void Awake()
     {
-        currentHealth = maxHp;
-
+        currentHealth = maxHealth;
     }
+
+    //Bryan's code
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.transform.tag == "Enemy")
+    //    {
+    //        if (currentHealth <= 1)
+    //        {
+    //            Debug.Log("Game Over");
+    //        }
+
+    //        else
+    //        {
+    //            currentHealth -= 1;
+    //            StartCoroutine(IFrames());
+    //        }
+    //    }
+    //}
+
+    private void takeDamage(int damage)
+    {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+        //healthChange?.Invoke((float)currentHealth / maxHealth);
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            //player dies
+            Destroy(gameObject);
+        }
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Enemy")
         {
-            if (currentHealth <= 1)
-            {
-                Debug.Log("Game Over");
-            }
-
-            else
-            {
-                currentHealth -= 1;
-                StartCoroutine(IFrames());
-            }
+            takeDamage(10);
         }
-    }
-
-    private void Heal()
-    {
-        if (currentHealth < maxHp && currentHealth > 0)
-        currentHealth += 1;
+        StartCoroutine(IFrames());
     }
 
     IEnumerator IFrames()
     {
-        Physics2D.IgnoreLayerCollision(7, 8);
-        yield return new WaitForSeconds(2);
-        Physics2D.IgnoreLayerCollision(7, 8, false);
+        yield return new WaitForSeconds(attackDuration);
+    }
+    private void Heal()
+    {
+        if (currentHealth < maxHealth && currentHealth > 0)
+        currentHealth++;
     }
 
 }
