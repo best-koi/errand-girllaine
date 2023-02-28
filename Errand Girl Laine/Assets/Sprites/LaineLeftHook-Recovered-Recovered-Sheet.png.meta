@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7deeec80234fc074c8db431d1c7f7d82
+guid: 8abc8f7934cd56149b513565b19074a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LaineLeftHook-Recovered-Sheet_0
+      name: LaineLeftHook-Recovered-Recovered-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +137,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4859a274e401084cb0684c3ead9f6d5
-      internalID: 168885593
+      spriteID: debedebadce33c14b8ee3995fc653eb9
+      internalID: 1806848188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaineLeftHook-Recovered-Sheet_1
+      name: LaineLeftHook-Recovered-Recovered-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,20 +158,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaa5390589e69394baa310b538d98473
-      internalID: -517714246
+      spriteID: c3e0de89db7fb5d4aa365c5e26b0a232
+      internalID: -1073494775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaineLeftHook-Recovered-Sheet_2
+      name: LaineLeftHook-Recovered-Recovered-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,20 +179,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 206fa9d4a53668f46a6c952fdd153461
-      internalID: 1169035891
+      spriteID: 9ffab2ddb79cfbb46a4f8896e0123492
+      internalID: 1610078446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaineLeftHook-Recovered-Sheet_3
+      name: LaineLeftHook-Recovered-Recovered-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,20 +200,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c168a85cc0a57840b0724e500dea907
-      internalID: -1173161697
+      spriteID: e2a28dcc188b16346b2f3a537e9a1824
+      internalID: 32679774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaineLeftHook-Recovered-Sheet_4
+      name: LaineLeftHook-Recovered-Recovered-Sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,20 +221,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c846d4de40da1c7438c9cf9a04f869a7
-      internalID: 1043188159
+      spriteID: 82c809bb26c842341a311cf0a458e3a0
+      internalID: -1002926547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaineLeftHook-Recovered-Sheet_5
+      name: LaineLeftHook-Recovered-Recovered-Sheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -242,14 +242,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa0ed3be35f688744ac35e178702740f
-      internalID: -2004654404
+      spriteID: 4df9a1e2bf179bb4385034c80848f76a
+      internalID: 1773608176
       vertices: []
       indices: 
       edges: []
@@ -258,19 +258,19 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LaineLeftHook-Recovered-Sheet_1: -517714246
-      LaineLeftHook-Recovered-Sheet_2: 1169035891
-      LaineLeftHook-Recovered-Sheet_4: 1043188159
-      LaineLeftHook-Recovered-Sheet_5: -2004654404
-      LaineLeftHook-Recovered-Sheet_0: 168885593
-      LaineLeftHook-Recovered-Sheet_3: -1173161697
+      LaineLeftHook-Recovered-Recovered-Sheet_3: 32679774
+      LaineLeftHook-Recovered-Recovered-Sheet_1: -1073494775
+      LaineLeftHook-Recovered-Recovered-Sheet_4: -1002926547
+      LaineLeftHook-Recovered-Recovered-Sheet_2: 1610078446
+      LaineLeftHook-Recovered-Recovered-Sheet_0: 1806848188
+      LaineLeftHook-Recovered-Recovered-Sheet_5: 1773608176
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

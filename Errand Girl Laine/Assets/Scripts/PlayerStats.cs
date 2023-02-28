@@ -67,6 +67,7 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(attackDuration);
     }
+    
     private void Heal()
     {
         if (currentHealth < maxHealth && currentHealth > 0)
