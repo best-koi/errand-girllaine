@@ -57,17 +57,28 @@ public class StatsManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        
         if (currentHealth <= 0)
         {
             Debug.Log("Game Over");
             Destroy(gameObject);
         }
-
+        
         else
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
             Debug.Log("Took Damage");
+            if (currentHealth <= 0)
+            {
+                Debug.Log("Game Over");
+                gameObject.SetActive(false);
+            }
+
+            else
+            {
+                StartCoroutine(IFrames());
+            }
         }
     }
 
@@ -82,9 +93,9 @@ public class StatsManager : MonoBehaviour
     
     IEnumerator IFrames()
     {
-        Physics2D.IgnoreLayerCollision(7, 8);
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
         yield return new WaitForSeconds(invSeconds);
-        Physics2D.IgnoreLayerCollision(7, 8, false);
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 
 }
