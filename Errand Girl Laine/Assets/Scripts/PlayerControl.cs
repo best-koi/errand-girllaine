@@ -13,32 +13,44 @@ public class PlayerControl : MonoBehaviour
     private int facingDirection = 1; //Checks which direction the player is facing, is right by default
     private Animator animator;
 
-    /*void CheckPlayer()
+    /* public void CheckPlayer()
     {
-        //if player has Player1 tag, only WASD controls are enabled
+        //var player1 = PlayerInput.Instantiate(playerPrefab, controlScheme: "Player1", pairWithDevice: Keyboard.current);
+        //var player2 = PlayerInput.Instantiate(playerPrefab, controlScheme: "Player2", pairWithDevice: Keyboard.current);
+
         if (gameObject.tag == "Player1")
         {
-
+            //if player has Player1 tag, only WASD keys are enabled
         }
-        //if player has Player2 tag, only arrow keys are enabled
+        
         else if (gameObject.tag == "Player2")
         {
-
+            //if player has Player2 tag, only arrow keys are enabled
         }
     } */
 
 
+    //if block is successful, transition to SuccessfulBlock ((NEEDS TO CHECK FOR COLLISION))
     public void Block(InputAction.CallbackContext context)
     {
         //if player is attacked/something hits the collider but is blocking, player takes less damage or no damage
         //if key pressed switch to block animation
-        animator.SetTrigger("Block"); //sets "block" trigger to on to play the block animation
+        if(Input.GetKeyDown(KeyCode.Q)) 
+        {
+            animator.SetTrigger("Block"); //sets "block" trigger to on to play the block animation
+            animator.StopPlayback();
+        }
+        
     }
 
     public void Attack(InputAction.CallbackContext context)
     {
         //player attacks and decreases health of other player
-        animator.SetTrigger("Attack"); //sets "attack" trigger to on to play the attack animation
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("Attack"); //sets "attack" trigger to on to play the attack animation
+            animator.StopPlayback();
+        }
     }
 
 
@@ -68,7 +80,6 @@ public class PlayerControl : MonoBehaviour
 
         if (inputRaw > 0) //looks right
         {
-            //GetComponent<SpriteRenderer>().flipX = false;
             if (facingDirection == -1) FlipPlayer();
             facingDirection = 1;
             animator.SetBool("LookLeft", false);
@@ -76,8 +87,6 @@ public class PlayerControl : MonoBehaviour
 
         else if (inputRaw < 0) //looks left
         {
-            //FlipPlayer();
-            //GetComponent<SpriteRenderer>().flipX = true;
             if (facingDirection == 1) FlipPlayer();
             facingDirection = -1;
             animator.SetBool("LookLeft", true);

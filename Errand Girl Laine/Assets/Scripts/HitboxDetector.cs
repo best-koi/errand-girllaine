@@ -11,16 +11,16 @@ public class HitboxDetector : MonoBehaviour
 
     private void Awake()
     {
-       
+       sm = GetComponent<StatsManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.collider.tag);
-        if (collision.collider.tag == "Damage Hitbox")
+        if (collision.gameObject.tag == "Damage Hitbox")
         {
             Debug.Log("Hit");
-            sm.TakeDamage();
+            //sm.TakeDamage();
         }
     }
 }

@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 713273304}
   - component: {fileID: 713273306}
   - component: {fileID: 713273305}
+  - component: {fileID: 713273307}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: Untagged
@@ -393,6 +394,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713273303}
   m_CullTransparentMesh: 1
+--- !u!114 &713273307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713273303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc0c1546c5168b41995cfd40acab296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 713273305}
 --- !u!1 &762800281
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,8 +598,8 @@ GameObject:
   - component: {fileID: 1322451198}
   - component: {fileID: 1322451201}
   - component: {fileID: 1322451200}
-  - component: {fileID: 1322451199}
   - component: {fileID: 1322451202}
+  - component: {fileID: 1322451199}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -659,7 +673,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1322451202}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -717,9 +731,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1322451197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185912b134a44854ea6326aba9ea81b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1888854e9ec07ea4d87c5434bd4894ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: 0
 --- !u!1 &1610123716
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +973,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2048662622}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1016,9 +1031,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2048662617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185912b134a44854ea6326aba9ea81b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1888854e9ec07ea4d87c5434bd4894ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: 0
 --- !u!1 &2087970456
 GameObject:
   m_ObjectHideFlags: 0

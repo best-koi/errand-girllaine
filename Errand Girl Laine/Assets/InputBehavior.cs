@@ -165,7 +165,7 @@ namespace InputBehavior
                     ""id"": ""2bb4564c-87e6-4f97-89c0-bb56cdd3615f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 }
             ],

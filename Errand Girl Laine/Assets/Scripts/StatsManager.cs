@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 //Statmanager works for enemies and player
+
 
 public class StatsManager : MonoBehaviour
 {
@@ -15,11 +18,15 @@ public class StatsManager : MonoBehaviour
     private float currentHealth;
     [SerializeField]
     private float healAmount;
-    public HealthUI healthBar;
+    //public HealthUI healthBar;
+    //private GameObject healthBarGO;
+
+    //temporary
+    public UnityEvent<float> healthChange; //for health bar
 
     [Header("Damage")]
     [SerializeField]
-    private float damage;
+    private int damage;
 
     [Header("Block")]
     private bool isBlocking;
@@ -27,11 +34,14 @@ public class StatsManager : MonoBehaviour
     [Header("I Frames")]
     [SerializeField]
     private float invSeconds;
-
+    [SerializeField] private Canvas victory;
     private void Awake()
     {
+        //healthBarGO = GameObject.Find("Health");
+        //healthBar = healthBarGO.GetComponent<HealthUI>();
         currentHealth = maxHp;
-        healthBar.SetMaxHealth(maxHp);
+
+        //healthBar.SetMaxHealth(maxHp);
 
     }
 
@@ -55,31 +65,49 @@ public class StatsManager : MonoBehaviour
     }
     */
 
-    public void TakeDamage()
+    private void OnCollisionEnter2D(Collision2D collider)
     {
-        
+        if (collider.collider.tag == "AttackHitbox")
+        {
+            TakeDamage(damage);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHp);
+        healthChange?.Invoke((float) currentHealth / maxHp);
+        Debug.Log("Took Damage");
+        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             Debug.Log("Game Over");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            victory.gameObject.SetActive(true);
+            //currentHealth -= damage;
+            //healthBar.SetHealth(currentHealth);
         }
-        
         else
         {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-            Debug.Log("Took Damage");
-            if (currentHealth <= 0)
-            {
-                Debug.Log("Game Over");
-                gameObject.SetActive(false);
-            }
-
-            else
-            {
-                StartCoroutine(IFrames());
-            }
+            StartCoroutine(IFrames());
         }
+        
+        // if (currentHealth >= 0)
+        // {
+        //     currentHealth -= damage;
+        //     healthBar.SetHealth(currentHealth);
+        //     Debug.Log("Took Damage");
+        //     if (currentHealth <= 0)
+        //     {
+        //         Debug.Log("Game Over");
+        //         gameObject.SetActive(false);
+        //     }
+
+        //     else
+        //     {
+        //         StartCoroutine(IFrames());
+        //     }
+        // }
     }
 
     public void Heal()
@@ -87,10 +115,10 @@ public class StatsManager : MonoBehaviour
         if (currentHealth < maxHp && currentHealth > 0)
         {
             currentHealth += healAmount;
-            healthBar.SetHealth(currentHealth);
+            //healthBar.SetHealth(currentHealth);
         }
     }
-    
+
     IEnumerator IFrames()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
