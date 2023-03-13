@@ -11,6 +11,11 @@ public class LoadScenes : MonoBehaviour
         SceneManager.LoadScene("Nancy");
     }
 
+    public void PlayGame_Enemy()
+    {
+        SceneManager.LoadScene("Ryan");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

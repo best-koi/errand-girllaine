@@ -674,7 +674,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1322451202}
         m_TargetAssemblyTypeName: LoadScenes, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: PlayGame_Enemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
