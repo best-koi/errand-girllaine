@@ -69,6 +69,7 @@ public class StatsManager : MonoBehaviour
     {
         if (collider.collider.tag == "AttackHitbox")
         {
+            Debug.Log("JACKFLAP");
             TakeDamage(damage);
         }
     }
