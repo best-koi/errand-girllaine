@@ -32,7 +32,7 @@ public class StatsManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField]
-    protected int damage;
+    protected float damage;
 
     [Header("Block")]
     public bool blocking;
@@ -41,6 +41,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField]
     private float invSeconds;
     [SerializeField] private Canvas victory;
+    [SerializeField] private Canvas gameOver;
     protected virtual void Awake()
     {
         //healthBarGO = GameObject.Find("Health");
@@ -82,6 +83,8 @@ public class StatsManager : MonoBehaviour
             if (blocking == true)
             {
                 animator.Play("LaineSuccessfulBlock");
+                Heal(healAmount);
+                //animator.StopPlayback();
                 Debug.Log("Blocked");
             }
 
@@ -92,7 +95,7 @@ public class StatsManager : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHp);
         healthChange?.Invoke((float) currentHealth / maxHp);
@@ -101,7 +104,13 @@ public class StatsManager : MonoBehaviour
         {
             Debug.Log("Game Over");
             gameObject.SetActive(false);
-            if(this.tag == "Enemy") victory.gameObject.SetActive(true);
+            if(this.tag == "Enemy")
+            {
+                victory.gameObject.SetActive(true);
+            } else
+            {
+                gameOver.gameObject.SetActive(true);
+            }
             //currentHealth -= damage;
             //healthBar.SetHealth(currentHealth);
         }
@@ -128,11 +137,13 @@ public class StatsManager : MonoBehaviour
         // }
     }
 
-    public void Heal()
+    public void Heal(float heal)
     {
         if (currentHealth < maxHp && currentHealth > 0)
         {
-            currentHealth += healAmount;
+            currentHealth = Mathf.Clamp(currentHealth + heal, 0, maxHp);
+            healthChange?.Invoke((float) currentHealth / maxHp);
+            //currentHealth += healAmount;
             //healthBar.SetHealth(currentHealth);
         }
     }

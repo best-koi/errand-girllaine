@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
         {
             animator.SetBool("Block", true); //sets "block" trigger to on to play the block animation
             animator.Play("LaineBlock");
-            //if(Input.GetKey(KeyCode.Q)) animator.Play("LaineBlockFrame");
+            //while (Input.GetKey(KeyCode.Q)) animator.Play("LaineBlockFrame");
         }
 
         else if (Input.GetKeyUp(KeyCode.Q))
