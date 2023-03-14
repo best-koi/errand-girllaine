@@ -101,7 +101,7 @@ public class StatsManager : MonoBehaviour
         {
             Debug.Log("Game Over");
             gameObject.SetActive(false);
-            victory.gameObject.SetActive(true);
+            if(this.tag == "Enemy") victory.gameObject.SetActive(true);
             //currentHealth -= damage;
             //healthBar.SetHealth(currentHealth);
         }
