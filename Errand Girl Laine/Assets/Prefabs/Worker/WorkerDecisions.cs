@@ -195,7 +195,7 @@ public class WorkerDecisions : MonoBehaviour
 
         //Wait for acceleration phase to end before starting deceleration phase; acc phase ends when player is detected
         await WorkerMovement.StandardApproachAccelerate(
-            primaryLayerMask: LayerMask.GetMask("Player"),
+            primaryLayerMask: LayerMask.GetMask("Player1"),
 
             SAMaxSpeed: SAMaxSpeed,
             SAAcceleration: SAAcceleration,
@@ -451,9 +451,8 @@ public class WorkerDecisions : MonoBehaviour
         //Don't change face direction while moving
         facePlayer = false;
 
-        //Move through the player by disabling body collider
-        GameObject BodyCollider = workerTransform.Find("Body Collider").gameObject;
-        BodyCollider.SetActive(false);
+        //Move through the player by disabling collision with player
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player1"), LayerMask.NameToLayer("Enemy"), true);
 
         //Instantly move in a straight line away from the player, keep that speed for a bit
         await WorkerMovement.DodgeAwayConstantSpeed(
@@ -469,8 +468,8 @@ public class WorkerDecisions : MonoBehaviour
         await WorkerMovement.FreezeSecs(
             duration: DodgeAwayEndlagSecs);
 
-        //Become physically tangible again after endlag
-        BodyCollider.SetActive(true);
+        //Become physically tangible to the player again after endlag
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player1"), LayerMask.NameToLayer("Enemy"), false);
 
         return MakeNextDecisionTest();
     }
@@ -487,9 +486,8 @@ public class WorkerDecisions : MonoBehaviour
         //Don't change face direction while moving
         facePlayer = false;
 
-        //Move through the player by disabling body collider
-        GameObject BodyCollider = workerTransform.Find("Body Collider").gameObject;
-        BodyCollider.SetActive(false);
+        //Move through the player by disabling collision with player
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player1"), LayerMask.NameToLayer("Enemy"), true);
 
         //Instantly move in a straight line away from the player, keep that speed for a bit
         await WorkerMovement.DodgeBehindConstantSpeed(
@@ -505,8 +503,8 @@ public class WorkerDecisions : MonoBehaviour
         await WorkerMovement.FreezeSecs(
             duration: DodgeBehindEndlagSecs);
 
-        //Become physically tangible again after endlag
-        BodyCollider.SetActive(true);
+        //Become physically tangible to the player again after endlag
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player1"), LayerMask.NameToLayer("Enemy"), false);
 
         return MakeNextDecisionTest();
     }
