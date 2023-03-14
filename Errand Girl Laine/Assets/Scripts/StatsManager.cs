@@ -24,12 +24,15 @@ public class StatsManager : MonoBehaviour
     //temporary
     public UnityEvent<float> healthChange; //for health bar
 
+    //Test
+    public PlayerControl pc;
+
     [Header("Damage")]
     [SerializeField]
     private int damage;
 
     [Header("Block")]
-    private bool isBlocking;
+    public bool blocking;
 
     [Header("I Frames")]
     [SerializeField]
@@ -40,6 +43,7 @@ public class StatsManager : MonoBehaviour
         //healthBarGO = GameObject.Find("Health");
         //healthBar = healthBarGO.GetComponent<HealthUI>();
         currentHealth = maxHp;
+        pc = GetComponent<PlayerControl>();
 
         //healthBar.SetMaxHealth(maxHp);
 
@@ -69,8 +73,17 @@ public class StatsManager : MonoBehaviour
     {
         if (collider.collider.tag == "AttackHitbox")
         {
+            blocking = pc.isBlocking;
             Debug.Log("JACKFLAP");
-            TakeDamage(damage);
+            if (blocking == true)
+            {
+                Debug.Log("Blocked");
+            }
+
+            else
+            {
+                TakeDamage(damage);
+            }
         }
     }
 

@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rb;
     private int facingDirection = 1; //Checks which direction the player is facing, is right by default
     private Animator animator;
+    public bool isBlocking;
 
     /* public void CheckPlayer()
     {
@@ -37,8 +38,14 @@ public class PlayerControl : MonoBehaviour
         //if key pressed switch to block animation
         if(Input.GetKeyDown(KeyCode.Q)) 
         {
+            isBlocking = true;
             animator.SetTrigger("Block"); //sets "block" trigger to on to play the block animation
             animator.StopPlayback();
+        }
+
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            isBlocking = false;
         }
         
     }
