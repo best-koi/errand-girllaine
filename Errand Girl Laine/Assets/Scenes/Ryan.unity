@@ -502,6 +502,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57816680}
   m_CullTransparentMesh: 1
+--- !u!1 &153839385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5689422511011852112, guid: 24a73d73b13d87a4cb7cf0197114875c, type: 3}
+  m_PrefabInstance: {fileID: 1641006305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &222185487
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,8 +679,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500845104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -12, z: 0}
-  m_LocalScale: {x: 30, y: 5.5, z: 1}
+  m_LocalPosition: {x: 0.2236, y: -12.298, z: 0}
+  m_LocalScale: {x: 36.706936, y: 6.0961227, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 222185488}
@@ -1136,8 +1141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092824295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 12, z: 0}
-  m_LocalScale: {x: 30, y: 5.5, z: 1}
+  m_LocalPosition: {x: -0.0445, y: 12.0889, z: 0}
+  m_LocalScale: {x: 36.486973, y: 5.32235, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 222185488}
@@ -2164,6 +2169,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7180253581485560191, guid: 24a73d73b13d87a4cb7cf0197114875c, type: 3}
+      propertyPath: pc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180253581485560191, guid: 24a73d73b13d87a4cb7cf0197114875c, type: 3}
       propertyPath: maxHp
       value: 200
       objectReference: {fileID: 0}
@@ -2216,6 +2225,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5689422511011852122, guid: 24a73d73b13d87a4cb7cf0197114875c, type: 3}
   m_PrefabInstance: {fileID: 1641006305}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1641006311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153839385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c28e57301bee0349aecbb5e53291ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 200
+  currentHealth: 200
+  healAmount: 10
+  healthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1994379489}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pc: {fileID: 0}
+  damage: 10
+  blocking: 0
+  invSeconds: 3
+  victory: {fileID: 1864271134}
 --- !u!1 &1698883149
 GameObject:
   m_ObjectHideFlags: 0

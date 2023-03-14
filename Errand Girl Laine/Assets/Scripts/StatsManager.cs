@@ -11,13 +11,16 @@ using UnityEngine.SceneManagement;
 
 public class StatsManager : MonoBehaviour
 {
+    private Animator animator;
+
     [Header("Health")]
     [SerializeField]
-    private float maxHp;
+    protected float maxHp;
     [SerializeField]
-    private float currentHealth;
+    protected float currentHealth;
     [SerializeField]
     private float healAmount;
+
     //public HealthUI healthBar;
     //private GameObject healthBarGO;
 
@@ -29,7 +32,7 @@ public class StatsManager : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField]
-    private int damage;
+    protected int damage;
 
     [Header("Block")]
     public bool blocking;
@@ -38,13 +41,14 @@ public class StatsManager : MonoBehaviour
     [SerializeField]
     private float invSeconds;
     [SerializeField] private Canvas victory;
-    private void Awake()
+    protected virtual void Awake()
     {
         //healthBarGO = GameObject.Find("Health");
         //healthBar = healthBarGO.GetComponent<HealthUI>();
         currentHealth = maxHp;
+        animator = GetComponent<Animator>();
         pc = GetComponent<PlayerControl>();
-
+        blocking = animator.GetBool("Block");
         //healthBar.SetMaxHealth(maxHp);
 
     }
@@ -69,14 +73,15 @@ public class StatsManager : MonoBehaviour
     }
     */
 
-    private void OnCollisionEnter2D(Collision2D collider)
+    protected virtual void OnCollisionEnter2D(Collision2D collider)
     {
         if (collider.collider.tag == "AttackHitbox")
         {
-            blocking = pc.isBlocking;
+            blocking = animator.GetBool("Block");
             Debug.Log("JACKFLAP");
             if (blocking == true)
             {
+                animator.Play("LaineSuccessfulBlock");
                 Debug.Log("Blocked");
             }
 
@@ -92,7 +97,6 @@ public class StatsManager : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHp);
         healthChange?.Invoke((float) currentHealth / maxHp);
         Debug.Log("Took Damage");
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             Debug.Log("Game Over");

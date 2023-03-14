@@ -11,8 +11,7 @@ public class PlayerControl : MonoBehaviour
     private Vector2 move;
     private Rigidbody2D rb;
     private int facingDirection = 1; //Checks which direction the player is facing, is right by default
-    private Animator animator;
-    public bool isBlocking;
+    public Animator animator;
 
     /* public void CheckPlayer()
     {
@@ -38,14 +37,14 @@ public class PlayerControl : MonoBehaviour
         //if key pressed switch to block animation
         if(Input.GetKeyDown(KeyCode.Q)) 
         {
-            isBlocking = true;
-            animator.SetTrigger("Block"); //sets "block" trigger to on to play the block animation
-            animator.StopPlayback();
+            animator.SetBool("Block", true); //sets "block" trigger to on to play the block animation
+            animator.Play("LaineBlock");
+            //if(Input.GetKey(KeyCode.Q)) animator.Play("LaineBlockFrame");
         }
 
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-            isBlocking = false;
+            animator.SetBool("Block", false);
         }
         
     }
@@ -56,7 +55,6 @@ public class PlayerControl : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             animator.SetTrigger("Attack"); //sets "attack" trigger to on to play the attack animation
-            animator.StopPlayback();
         }
     }
 

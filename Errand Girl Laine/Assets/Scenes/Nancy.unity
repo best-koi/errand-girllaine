@@ -1012,7 +1012,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  pc: {fileID: 0}
   damage: 10
+  blocking: 0
   invSeconds: 0
   victory: {fileID: 566016148}
 --- !u!1 &412311588
