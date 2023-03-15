@@ -18,7 +18,9 @@ public class WorkerDecisionLoop : MonoBehaviour
     async void Awake()
     {
         //Wait for WorkerMovement to initialize before getting a reference to it
-        await Task.Delay(1000);
+        float waitEnd = Time.time + 1.5f;
+        while (Time.time < waitEnd)
+            await Task.Yield();
 
         workerDecisions = GetComponent<WorkerDecisions>();
 

@@ -49,7 +49,9 @@ public class WorkerMeleeHitboxes : MonoBehaviour
                 return;
             }
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
     }
 
@@ -95,7 +97,9 @@ public class WorkerMeleeHitboxes : MonoBehaviour
             //Activate hitbox
             //hitbox.enabled = true;
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
 
             //Deactivate hitbox
             //hitbox.enabled = false;
@@ -139,7 +143,9 @@ public class WorkerMeleeHitboxes : MonoBehaviour
             //Activate hitbox
             //hitbox.enabled = true;
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
 
             //Deactivate hitbox
             //hitbox.enabled = false;
