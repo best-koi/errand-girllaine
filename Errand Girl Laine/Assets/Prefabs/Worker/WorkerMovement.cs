@@ -63,7 +63,9 @@ public class WorkerMovement : MonoBehaviour
             //Cancel the freeze if WorkerDecisions cancels it
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
     }
 
@@ -83,7 +85,9 @@ public class WorkerMovement : MonoBehaviour
         {
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
     }
 
@@ -99,7 +103,9 @@ public class WorkerMovement : MonoBehaviour
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
             rb.velocity -= rb.velocity * DodgeAwayDeceleration;
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
         rb.velocity = Vector2.zero;
     }
@@ -120,7 +126,9 @@ public class WorkerMovement : MonoBehaviour
         {
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
     }
 
@@ -136,7 +144,9 @@ public class WorkerMovement : MonoBehaviour
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
             rb.velocity -= rb.velocity * DodgeBehindDeceleration;
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
         rb.velocity = Vector2.zero;
     }
@@ -191,7 +201,9 @@ public class WorkerMovement : MonoBehaviour
                     distance: DashAttackDetectionRange);
             }
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
         return direction.x / Mathf.Abs(direction.x);
     }
@@ -208,7 +220,9 @@ public class WorkerMovement : MonoBehaviour
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
             rb.velocity -= rb.velocity * DashAttackDeceleration;
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
         rb.velocity = Vector2.zero;
     }
@@ -262,7 +276,9 @@ public class WorkerMovement : MonoBehaviour
                 primaryContactFilter, targets,
                 distance: SADetectionRange);
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
     }
 
@@ -278,7 +294,9 @@ public class WorkerMovement : MonoBehaviour
             if (cancelTokenSource.Token.IsCancellationRequested) { throw new TaskCanceledException(); }
 
             rb.velocity -= rb.velocity.normalized * SADeceleration;
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
         rb.velocity = Vector2.zero;
     }
@@ -321,7 +339,9 @@ public class WorkerMovement : MonoBehaviour
                 rb.velocity = vectDirection * CAMaxSpeed;
             }
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
 
         //The decel phase needs to use the same circleDirection as the accel phase
@@ -354,7 +374,9 @@ public class WorkerMovement : MonoBehaviour
 
             rb.velocity = vectDirection * deceleratingVelMagnitude;
 
-            await Task.Delay((int)(Time.fixedDeltaTime * 1000));
+            float tickEnd = Time.time + Time.fixedDeltaTime;
+            while (Time.time < tickEnd)
+                await Task.Yield();
         }
         rb.velocity = Vector2.zero;
     }

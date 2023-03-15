@@ -139,7 +139,9 @@ public class WorkerDecisions : MonoBehaviour
     async void Awake()
     {
         //It's possible that you may need to wait for mvmt & hboxes to initialize before getting references to them
-        await Task.Delay(500);
+        float waitEnd = Time.time + 1f;
+        while (Time.time < waitEnd)
+            await Task.Yield();
 
         workerTransform = transform.GetChild(0);
 
